@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+
+// vars ===============
+$bc-gradient: linear-gradient(to bottom, #343852, #292D44);
+$btn-gradient: linear-gradient(to left, #E655AE, #7D62D4);
+$fb-gradient: linear-gradient(to right, #0865FE, #34ACF9);
+$telegram-gradient: linear-gradient(to right, #634EED, #609BFC);
+$instagram-gradient: linear-gradient(to right, #B1237A, #ED478D);
+
+$primary: #d7d7d7;
+$secondary: #84879F;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  //background-image: url('../images/Profile-Card-UI-1.png');
+  color: #d7d7d7;
+  font-family: 'Lato', sans-serif;
+}
+
+.container {
+  position: relative;
+  height: 100%;
+}
+
+.right {
+  margin-left: auto;
+}
+
+.middle {
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.card {
+  width: 280px;
+  height: 500px;
+  padding: 1rem 2rem;
+  background: $bc-gradient;
+  border-radius: 8px;
+
+  &__top {
+    display: flex;
+    margin-bottom: 1rem;
+
+    .right {
+      margin-right: 1rem;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__info__image {
+    margin-bottom: 1rem;
+    box-shadow: 2px 4px 16px rgba(0, 0, 0, .4);
+    position: relative;
+
+    &::after {
+      content: 'k';
+      text-align: center;
+      position: absolute;
+      top: 65%;
+      left: 70%;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: $btn-gradient;
+    }
+
+    img {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      max-width: 100%;
+      object-fit: cover;
+      object-position: 0 0;
+
+    }
+
+  }
+
+  h2 {
+    font-size: 1.8rem;
+    line-height: 1.5;
+  }
+
+  h3 {
+
+    text-transform: uppercase;
+    font-size: .7rem;
+    letter-spacing: 1px;
+    color: $secondary;
+  }
+
+  p {
+    padding: 0 1rem;
+    margin-top: 1rem;
+    text-align: center;
+    font-size: .8rem;
+  }
+
+  .btn {
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+    margin-top: 1.5rem;
+    padding: .5rem 2rem;
+    border-radius: 50px;
+    background: $btn-gradient;
+    font-size: .8rem;
+    box-shadow: 2px 4px 16px rgba(0, 0, 0, .4);
+  }
+
+
+  .social-media {
+    margin-top: 1.5rem;
+    border-top: 2px solid #33374F;
+    display: flex;
+    justify-content: space-between;
+
+    div {
+      margin-top: 1.5rem;
+      display: flex;
+      flex-direction: column;
+
+      align-items: center;
+
+      i {
+        display: inline-block;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background-color: #fff;
+        position: relative;
+        box-shadow: 2px 4px 16px rgba(0, 0, 0, .4);
+
+        &::after {
+          position: absolute;
+          content: '';
+          top: 50%;
+          left: 50%;
+          width: 50%;
+          height: 50%;
+          transform: translate(-50%, -50%);
+          background-size: cover;
+
+        }
+      }
+
+      span {
+
+        font-size: .7rem;
+        color: $secondary
+      }
+
+      .number {
+        margin-top: 1rem;
+        font-weight: bold;
+        font-size: 1.2rem;
+        color: #fff;
+      }
+    }
+
+    .svg-facebook {
+      background: $fb-gradient;
+    }
+
+    .svg-instagram {
+      background: $instagram-gradient;
+    }
+
+    .svg-telegram {
+      background: $telegram-gradient;
+    }
+  }
+}
+
+
+
+
+.svg-facebook::after {
+  background-image: url(../images/svg/002-facebook.svg);
+}
+
+.svg-instagram::after {
+  background-image: url(../images/svg/001-instagram-logo.svg);
+
+
+}
+
+.svg-telegram::after {
+  background-image: url(../images/svg/005-telegram-logo.svg);
+}
