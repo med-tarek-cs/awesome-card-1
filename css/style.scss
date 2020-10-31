@@ -1,14 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
 
 // vars ===============
+
+// linear-gradient ---------------
 $bc-gradient: linear-gradient(to bottom, #343852, #292D44);
 $btn-gradient: linear-gradient(to left, #E655AE, #7D62D4);
 $fb-gradient: linear-gradient(to right, #0865FE, #34ACF9);
 $telegram-gradient: linear-gradient(to right, #634EED, #609BFC);
 $instagram-gradient: linear-gradient(to right, #B1237A, #ED478D);
 
+// box-shadow ---------------------
+$box-shadow: 2px 10px 16px rgba(0, 0, 0, .3);
+
+// color ---------------------
 $primary: #d7d7d7;
 $secondary: #84879F;
+
+// reset browser ==============================
 
 * {
   margin: 0;
@@ -16,10 +24,12 @@ $secondary: #84879F;
   box-sizing: border-box;
 }
 
+
+// common style ========================================
 body {
   height: 100vh;
   width: 100vw;
-  //background-image: url('../images/Profile-Card-UI-1.png');
+  background-image: url('../images/Profile-Card-UI-1.png');
   color: #d7d7d7;
   font-family: 'Lato', sans-serif;
 }
@@ -34,19 +44,32 @@ body {
 }
 
 .middle {
-
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 
+
+// Card =============================
 .card {
   width: 280px;
   height: 500px;
   padding: 1rem 2rem;
-  background: $bc-gradient;
+
   border-radius: 8px;
+
+  &.dark {
+    background: $bc-gradient;
+  }
+
+  &.light {
+    background: #fff;
+    color: #111;
+  }
+
+  background: #fff;
+  color: #111;
 
   &__top {
     display: flex;
@@ -65,8 +88,11 @@ body {
 
   &__info__image {
     margin-bottom: 1rem;
-    box-shadow: 2px 4px 16px rgba(0, 0, 0, .4);
+    box-shadow: $box-shadow;
     position: relative;
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
 
     &::after {
       content: 'k';
@@ -78,13 +104,14 @@ body {
       height: 20px;
       border-radius: 50%;
       background: $btn-gradient;
+      color: #fff;
     }
 
     img {
-      width: 70px;
-      height: 70px;
+
       border-radius: 50%;
-      max-width: 100%;
+      width: 100%;
+      height: 100%;
       object-fit: cover;
       object-position: 0 0;
 
@@ -121,13 +148,12 @@ body {
     border-radius: 50px;
     background: $btn-gradient;
     font-size: .8rem;
-    box-shadow: 2px 4px 16px rgba(0, 0, 0, .4);
+    box-shadow: $box-shadow;
   }
 
 
   .social-media {
     margin-top: 1.5rem;
-    border-top: 2px solid #33374F;
     display: flex;
     justify-content: space-between;
 
@@ -145,7 +171,7 @@ body {
         border-radius: 50%;
         background-color: #fff;
         position: relative;
-        box-shadow: 2px 4px 16px rgba(0, 0, 0, .4);
+        box-shadow: $box-shadow;
 
         &::after {
           position: absolute;
@@ -170,7 +196,6 @@ body {
         margin-top: 1rem;
         font-weight: bold;
         font-size: 1.2rem;
-        color: #fff;
       }
     }
 
@@ -189,8 +214,6 @@ body {
 }
 
 
-
-
 .svg-facebook::after {
   background-image: url(../images/svg/002-facebook.svg);
 }
@@ -203,4 +226,42 @@ body {
 
 .svg-telegram::after {
   background-image: url(../images/svg/005-telegram-logo.svg);
+}
+
+
+.cards {
+  display: flex;
+
+  .card {
+    margin: 1rem;
+  }
+}
+
+// switch between darck and light
+.card {
+
+  &.dark {
+    color: #fff;
+
+    .social-media {
+      border-top: 2px solid #33374F;
+
+      .number {
+        color: #fff;
+      }
+    }
+  }
+
+  &.light {
+    color: #222;
+
+    .social-media {
+      border-top: 2px solid #F6F7F8;
+
+      .number {
+        color: #222;
+      }
+    }
+
+  }
 }

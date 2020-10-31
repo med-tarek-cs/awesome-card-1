@@ -9,6 +9,7 @@
 body {
   height: 100vh;
   width: 100vw;
+  background-image: url("../images/Profile-Card-UI-1.png");
   color: #d7d7d7;
   font-family: 'Lato', sans-serif;
 }
@@ -34,9 +35,19 @@ body {
   width: 280px;
   height: 500px;
   padding: 1rem 2rem;
+  border-radius: 8px;
+  background: #fff;
+  color: #111;
+}
+
+.card.dark {
   background: -webkit-gradient(linear, left top, left bottom, from(#343852), to(#292D44));
   background: linear-gradient(to bottom, #343852, #292D44);
-  border-radius: 8px;
+}
+
+.card.light {
+  background: #fff;
+  color: #111;
 }
 
 .card__top {
@@ -65,9 +76,12 @@ body {
 
 .card__info__image {
   margin-bottom: 1rem;
-  -webkit-box-shadow: 2px 4px 16px rgba(0, 0, 0, 0.4);
-          box-shadow: 2px 4px 16px rgba(0, 0, 0, 0.4);
+  -webkit-box-shadow: 2px 10px 16px rgba(0, 0, 0, 0.3);
+          box-shadow: 2px 10px 16px rgba(0, 0, 0, 0.3);
   position: relative;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
 }
 
 .card__info__image::after {
@@ -81,13 +95,13 @@ body {
   border-radius: 50%;
   background: -webkit-gradient(linear, right top, left top, from(#E655AE), to(#7D62D4));
   background: linear-gradient(to left, #E655AE, #7D62D4);
+  color: #fff;
 }
 
 .card__info__image img {
-  width: 70px;
-  height: 70px;
   border-radius: 50%;
-  max-width: 100%;
+  width: 100%;
+  height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
   -o-object-position: 0 0;
@@ -123,13 +137,12 @@ body {
   background: -webkit-gradient(linear, right top, left top, from(#E655AE), to(#7D62D4));
   background: linear-gradient(to left, #E655AE, #7D62D4);
   font-size: .8rem;
-  -webkit-box-shadow: 2px 4px 16px rgba(0, 0, 0, 0.4);
-          box-shadow: 2px 4px 16px rgba(0, 0, 0, 0.4);
+  -webkit-box-shadow: 2px 10px 16px rgba(0, 0, 0, 0.3);
+          box-shadow: 2px 10px 16px rgba(0, 0, 0, 0.3);
 }
 
 .card .social-media {
   margin-top: 1.5rem;
-  border-top: 2px solid #33374F;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -159,8 +172,8 @@ body {
   border-radius: 50%;
   background-color: #fff;
   position: relative;
-  -webkit-box-shadow: 2px 4px 16px rgba(0, 0, 0, 0.4);
-          box-shadow: 2px 4px 16px rgba(0, 0, 0, 0.4);
+  -webkit-box-shadow: 2px 10px 16px rgba(0, 0, 0, 0.3);
+          box-shadow: 2px 10px 16px rgba(0, 0, 0, 0.3);
 }
 
 .card .social-media div i::after {
@@ -184,7 +197,6 @@ body {
   margin-top: 1rem;
   font-weight: bold;
   font-size: 1.2rem;
-  color: #fff;
 }
 
 .card .social-media .svg-facebook {
@@ -212,5 +224,39 @@ body {
 
 .svg-telegram::after {
   background-image: url(../images/svg/005-telegram-logo.svg);
+}
+
+.cards {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.cards .card {
+  margin: 1rem;
+}
+
+.card.dark {
+  color: #fff;
+}
+
+.card.dark .social-media {
+  border-top: 2px solid #33374F;
+}
+
+.card.dark .social-media .number {
+  color: #fff;
+}
+
+.card.light {
+  color: #222;
+}
+
+.card.light .social-media {
+  border-top: 2px solid #F6F7F8;
+}
+
+.card.light .social-media .number {
+  color: #222;
 }
 /*# sourceMappingURL=style.css.map */
